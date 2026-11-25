@@ -1,0 +1,12 @@
+# --- etl-assistant --- (add with `crontab -e`; replace /home/YOU with your home directory)
+XDG_RUNTIME_DIR=/run/user/1000
+# 08:00 morning briefing, 21:00 evening check
+0 8 * * * /home/YOU/etl-assistant/assistant/trigger.sh morning
+0 21 * * * /home/YOU/etl-assistant/assistant/trigger.sh evening
+# optional: every 2 hours 10–22, alert only if there is new unread mail
+0 10-22/2 * * * /home/YOU/etl-assistant/assistant/trigger.sh inbox
+# 04:30 fresh restart (keeps the session's context small)
+30 4 * * * /usr/bin/systemctl --user restart etl-assistant.service
+# optional: standalone daily eTL email digest (no Claude needed)
+# 0 7 * * * /home/YOU/etl-assistant/etl-digest/run.sh
+# --- end etl-assistant ---

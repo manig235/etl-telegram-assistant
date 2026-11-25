@@ -1,0 +1,3 @@
+#!/bin/sh
+# Weather + umbrella call as JSON. weather [--tomorrow | --date YYYY-MM-DD] [--lat N --lon N --place NAME]
+exec /usr/bin/python3 -I "$(dirname "$0")/weather.py" "$@"

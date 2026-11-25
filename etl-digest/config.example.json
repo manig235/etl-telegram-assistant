@@ -1,0 +1,13 @@
+{
+  "etl_token": "PASTE_ETL_ACCESS_TOKEN (myetl.snu.ac.kr/profile/settings -> 새 액세스 토큰)",
+  "mail_to": "you@example.com",
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "user": "you@gmail.com",
+    "password": "GMAIL_APP_PASSWORD (myaccount.google.com/apppasswords)"
+  },
+  "upcoming_days": 7,
+  "announcement_days": 1,
+  "skip_if_empty": false
+}

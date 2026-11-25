@@ -1,0 +1,14 @@
+# personal data — never commit
+assistant/notes/*
+!assistant/notes/.gitkeep
+assistant/downloads/
+assistant/trigger.log
+etl-digest/digest.log
+config.json
+calendars.json
+.env
+access.json
+
+__pycache__/
+*.pyc
+*.part

@@ -1,0 +1,11 @@
+#!/bin/sh
+# eTL lookups for the assistant. The token stays in ~/.config/etl-digest/config.json.
+#   etl                 digest JSON (7 days of deadlines, missing, 1 day of announcements)
+#   etl --days 14 --ann-days 7
+#   etl --courses
+#   etl --api "/api/v1/calendar_events?type=assignment&per_page=50"
+#   etl --download <file id | …/files/<id> URL> [...] [--out <subfolder>]
+#   etl --verify <course_id>/<assignment_id> [--compare <local file> ...] [--no-fetch]
+# Downloads go under assistant/downloads (the script refuses anywhere else).
+HERE=$(cd "$(dirname "$0")/.." && pwd)
+ETL_DOWNLOAD_DIR="$HERE/downloads" exec /usr/bin/python3 -I "$HERE/../etl-digest/etl_digest.py" --json "$@"
